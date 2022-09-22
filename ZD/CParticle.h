@@ -14,7 +14,7 @@ private:
     int mV;     // 质点移动速率
 
 public:
-    CParticle(int zV);            // 构造函数
+    CParticle(int zV);                // 构造函数
     ~CParticle();                     // 析构函数
     void SetPosition(int zX, int zY); // 质点对象位置设置操作函数
     void SetVelocity(int zV);         // 质点对象速率设置操作函数
