@@ -6,27 +6,29 @@ CStudent::CStudent()
 {
     mpName = NULL;
     mCount++;
-    int tmp = 21280000 + mCount, pos = 7;
-    while (tmp)
-    {
-        mNo[pos] = (char)(48 + tmp % 10);
-        tmp /= 10;
-        pos -= 1;
-    }
-    mNo[8] = '\0';
+    // int tmp = 21280000 + mCount, pos = 7;
+    // while (tmp)
+    // {
+    //     mNo[pos] = (char)(48 + tmp % 10);
+    //     tmp /= 10;
+    //     pos -= 1;
+    // }
+    sscanf(mNo, "2128%040d", &mCount);
+    // mNo[8] = '\0';
 }
 
 CStudent::~CStudent()
 {
-    if (strlen(mpName) == 0)
-        free(mpName);
+    if (strlen(mpName) != 0)
+        delete[] mpName;
     mCount--;
 }
 
 CStudent::CStudent(const CStudent &zS)
 {
     strcpy(mNo, zS.mNo);
-    mpName = (char *)malloc(sizeof(zS.mpName));
+    // mpName = (char *)malloc(sizeof(zS.mpName));
+    mpName = new char[strlen(zS.mpName)];
     strcpy(mpName, zS.mpName);
     for (int i = 0; i < 5; i++)
     {
@@ -44,7 +46,8 @@ void CStudent::SetStudent()
     char tmp[1024];
     cin >> tmp;
     int len = strlen(tmp) + 1;
-    mpName = (char *)malloc(len * sizeof(char));
+    // mpName = (char *)malloc(len * sizeof(char));
+    mpName = new char[len];
     strcpy(mpName, tmp);
     cout << "请输入五科成绩(按空格隔开)" << endl;
     for (int i = 0; i < 5; i++)
