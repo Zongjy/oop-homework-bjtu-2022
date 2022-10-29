@@ -2,6 +2,7 @@
 #define FS_H
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class CComplex
@@ -13,13 +14,20 @@ private:
 public:
     CComplex(double zR = 0.0, double zI = 0.0);
     ~CComplex();
-    void SetValue();                              //* 复数对象设置1
-    void SetValue(double zR, double zI);          //* 复数对象设置2
-    void ShowValue();                             //* 复数对象显示
-    CComplex Add(const CComplex &zC) const;       //* 复数加法
-    CComplex Substract(const CComplex &zC) const; //* 复数减法
-    CComplex Multiply(const CComplex &zC) const;  //* 复数乘法
-    CComplex Divide(const CComplex &zC) const;    //* 复数除法
+    void SetValue();                     //* 复数对象设置1
+    void SetValue(double zR, double zI); //* 复数对象设置2
+    void ShowValue();                    //* 复数对象显示
+
+    // CComplex Add(const CComplex &zC) const;       //* 复数加法
+    // CComplex Substract(const CComplex &zC) const; //* 复数减法
+    // CComplex Multiply(const CComplex &zC) const;  //* 复数乘法
+    // CComplex Divide(const CComplex &zC) const;    //* 复数除法
+
+    operator double() const;
+    CComplex operator+(const CComplex &zC) const;
+    CComplex operator-(const CComplex &zC) const;
+    friend CComplex operator*(const CComplex &zC1, const CComplex &zC2);
+    friend CComplex operator/(const CComplex &zC1, const CComplex &zC2);
     friend ostream &operator<<(ostream &os, const CComplex &c);
 };
 

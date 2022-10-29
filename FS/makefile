@@ -1,9 +1,10 @@
-fs:fs.o main.o
-	g++ main.o fs.o -o fs 
-main.o:main.cpp
-	g++ main.cpp -c -g -o main.o
-fs.o:fs.cpp
-	g++ fs.cpp -c -g -o fs.o
+CFLAGS +=-Wall -g -D_FILE_OFFSET_BITS=64
+CC =g++
+TARGET =fs
+SRC =fs.cpp
+
+$(TARGET):$(SRC)
+	$(CC) $(SRC) main.cpp $(CFLAGS) -o $@
 
 clean:
-	rm -f *.o
+	-rm -f $(TARGET)

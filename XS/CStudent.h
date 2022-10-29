@@ -21,6 +21,7 @@ public:
     void ShowStudent() const;       //学生对象显示操作函数
     void CompareScore(const CStudent &zS) const;    //学生对象比较函数1
     void CompareScore(const CStudent *zS) const;    //学生对象比较函数2
+    friend void CompareScore(const CStudent &zS1, const CStudent &zS2); //友元比较函数
 };
 
 #endif
