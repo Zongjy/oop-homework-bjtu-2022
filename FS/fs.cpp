@@ -119,7 +119,7 @@ CComplex operator/(const CComplex &zC1, const CComplex &zC2)
     if(tmp == 0.0)
     {
         cout << "除数不能为0!" << endl;
-        return CComplex(0, 0);
+        exit(-1);
     }
     return CComplex((zC1.mR * zC2.mR + zC1.mI * zC2.mI) / tmp, (zC1.mI * zC2.mR - zC1.mR * zC2.mI) / tmp);
 }
