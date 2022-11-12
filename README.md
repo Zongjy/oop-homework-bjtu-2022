@@ -9,10 +9,6 @@ bjtu2022秋季翟高寿oop&amp;C++作业汇总(更新中)
 │  README.md
 │  作业说明.pdf
 │
-├─.vscode
-│      c_cpp_properties.json
-│      settings.json
-│
 ├─FS
 │      fs.cpp
 │      fs.h
@@ -37,9 +33,19 @@ bjtu2022秋季翟高寿oop&amp;C++作业汇总(更新中)
 │      main.cpp
 │      makefile
 │
+├─Y_YZT
+│      main.cpp
+│      makefile
+│      YZT.cpp
+│      YZT.h
+│
 └─ZD
         CParticle.cpp
         CParticle.h
         main.cpp
         makefile
 ```
+
+## 注意
+
+如有疑问请联系作者(vx:LY210-384-6867)

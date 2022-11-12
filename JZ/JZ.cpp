@@ -65,7 +65,7 @@ CMatrix::~CMatrix()
 /// @param is (输入流对象)
 /// @param zM (矩阵类对象)
 /// @return 输入流对象
-istream& operator>>(istream& is,const CMatrix &zM)
+istream& operator>>(istream& is,CMatrix &zM)
 {
     for (int i = 0; i < zM.row; i++)
     {

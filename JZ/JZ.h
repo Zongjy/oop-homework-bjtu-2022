@@ -22,7 +22,7 @@ public:
     CMatrix &operator=(const CMatrix &);      // 矩阵赋值
     double operator()(int, int) const;        // 获取矩阵某元素的值
     friend ostream &operator<<(ostream &, const CMatrix &); // 矩阵输出函数
-    friend istream &operator>>(istream &, const CMatrix &); // 矩阵输入函数
+    friend istream &operator>>(istream &, CMatrix &); // 矩阵输入函数
 };
 
 #endif
